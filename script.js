@@ -3,17 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeElement = document.getElementById('utc-time');
 
     function updateUTCTime() {
-        const now = new Date();
-        const hours = String(now.getUTCHours()).padStart(2, '0');
-        const minutes = String(now.getUTCMinutes()).padStart(2, '0');
-        const seconds = String(now.getUTCSeconds()).padStart(2, '0');
-        
-        timeElement.textContent = `${hours}:${minutes}:${seconds} UTC`;
+        timeElement.textContent = Date.now();
     }
 
     updateUTCTime();
 
-    setInterval(updateUTCTime, 1000);
+    setInterval(updateUTCTime, 10);
 
     const socialBtns = document.querySelectorAll('.social-btn');
     socialBtns.forEach((btn, index) => {
